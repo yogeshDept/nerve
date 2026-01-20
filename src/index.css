@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: light;
+  --bg: #f4f3ee;
+  --surface: #ffffff;
+  --surface-muted: #f5f6f8;
+  --surface-strong: #eef1f6;
+  --text: #1c2230;
+  --text-muted: #5b667c;
+  --accent: #1b6f8d;
+  --accent-strong: #155a72;
+  --accent-soft: #e2f0f5;
+  --border: #dbe2ec;
+  --shadow-strong: 0 30px 60px rgba(18, 33, 52, 0.18);
+  --shadow-soft: 0 18px 40px rgba(18, 33, 52, 0.12);
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-pill: 999px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at -10% 0%, rgba(255, 196, 140, 0.35), transparent 60%),
+    radial-gradient(900px 500px at 110% 10%, rgba(27, 111, 141, 0.25), transparent 60%),
+    linear-gradient(180deg, #f9f7f1 0%, #eef1f6 100%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+button:focus-visible {
+  outline: 2px solid #254ee9;
+  outline-offset: 3px;
+}
