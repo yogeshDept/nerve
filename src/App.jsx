@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import Button from './components/Button';
 import { dateArray, strategyArray } from './constants';
@@ -34,17 +34,15 @@ function App() {
     return () => document.removeEventListener('mousedown', handleOutsideClick);
   }, []);
 
-  const strategies = useMemo(() => {
-    const viewData = strategyArray.find((item) => item.View === selectedView);
-    const list = viewData?.Value?.[selectedDate] ?? [];
-    const counts = new Map();
+  const viewData = strategyArray.find((item) => item.View === selectedView);
+  const list = viewData?.Value?.[selectedDate] ?? [];
+  const counts = new Map();
 
-    list.forEach((name) => {
-      counts.set(name, (counts.get(name) ?? 0) + 1);
-    });
+  list.forEach((name) => {
+    counts.set(name, (counts.get(name) ?? 0) + 1);
+  });
 
-    return Array.from(counts, ([name, count]) => ({ name, count }));
-  }, [selectedDate, selectedView]);
+  const strategies = Array.from(counts, ([name, count]) => ({ name, count }));
 
   const formattedDate = formatDate(selectedDate);
   const activeIndex = Math.max(
